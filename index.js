@@ -142,15 +142,19 @@ const post_random_image = () =>
             share(tags, image)
                 .then(tags => {
                     logPosting(tags, image)
+                    return tags;
                 })
                 .catch(err => {
                     console.error('post error', err);
+                    return err;
                 }))
         .catch(err => {
             console.error('pick error', err);
+            return err;
         }))
     .catch(err => {
         console.error('image upload error', err);
+        return err;
     });
 
 post_random_image()
