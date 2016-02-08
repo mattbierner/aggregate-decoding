@@ -7,7 +7,7 @@ const parseString = require('xml2js').parseString;
 const commons = require('./commons');
 
 // Time between postings, in ms.
-const INTERVAL = 1000 * 60 * 30; // half hour.
+const INTERVAL = 1000 * 60 * 10; // ten minutes.
 
 const LOG_FILE = path.join(__dirname, 'log.txt');
 
@@ -157,7 +157,10 @@ const post_random_image = () =>
         return err;
     });
 
-post_random_image()
-    .then(
-        _ => setTimeout(post_random_image, INTERVAL),
-        _ => setTimeout(post_random_image, INTERVAL));
+const main = () =>
+    post_random_image()
+        .then(
+            _ => setTimeout(main, INTERVAL),
+            _ => setTimeout(main, INTERVAL));
+
+main();

@@ -1,9 +1,9 @@
 # Aggregate Decoding
-Script that posts a random image from [Wikimedia Commons][commons], plus a random sampling of between one and three hashtags to Twitter every 30 minutes. Results can be highly entertaining.
+Script that posts a random image from [Wikimedia Commons][commons], plus a random sampling of between one and three hashtags to Twitter every 10 minutes. Results can be highly entertaining.
 
 See it in action [@Arthur_Morty][Arthur_Morty].
 
-Unlike [@_LovedHArt][_LovedHArt], this script only maintains short term memory. It may post about the same tag more than once, but hopefully not too close together. The interval has also been decrease to every half hour since the script uploads images. I was originally targeting Instagram but their API sucks.
+Unlike [@_LovedHArt][_LovedHArt], this script only maintains short term memory. It may post about the same tag more than once, but hopefully not too close together. I was originally targeting Instagram but their API sucks.
 
 # Running
 To randomize your images, first [register an application with Twitter](http://dev.twitter.com).
