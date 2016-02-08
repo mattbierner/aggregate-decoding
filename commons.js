@@ -96,7 +96,7 @@ module.exports.getRandomImage = () =>
     selectRandomCommonsFiles().then(urls =>
         urls.reduce((p, url) =>
             p.catch(err =>
-                getThumbnailImageUrl(url, UPLOADED_IMAGE_SIZE, UPLOADED_IMAGE_SIZE)
-                    .then(img => getImage(img.url)
-                        .then(data => ({ name: img.name, url: img.url, data: data})))),
+                getThumbnailImageUrl(url, UPLOADED_IMAGE_SIZE, UPLOADED_IMAGE_SIZE).then(img =>
+                    getImage(img.url)
+                        .then(data => ({ name: img.name, url: img.url, data: data })))),
             Promise.reject('no images')));

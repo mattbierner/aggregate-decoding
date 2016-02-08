@@ -136,23 +136,24 @@ const logPosting = (tags, image) => {
 /**
     Start posting
 */
-const main = () =>
+const post_random_image = () =>
     commons.getRandomImage().then(upload_image).then(image =>
         ensure_future_tags().then(pick_tags).then(tags =>
-            share(tags, image))
+            share(tags, image)
                 .then(tags => {
                     logPosting(tags, image)
-                    setTimeout(main, INTERVAL);
                 })
                 .catch(err => {
                     console.error('post error', err);
-                    setTimeout(main, INTERVAL);
                 }))
         .catch(err => {
             console.error('pick error', err);
-        })
+        }))
     .catch(err => {
         console.error('image upload error', err);
     });
 
-main();
+post_random_image()
+    .then(
+        _ => setTimeout(post_random_image, INTERVAL),
+        _ => setTimeout(post_random_image, INTERVAL));
