@@ -106,7 +106,7 @@ const pick_tags = () =>
     Generate the status message
 */
 const status_message = (tags) =>
-    '.' + tags.map(x => "#" + x).join(' ');
+    tags.map(x => "#" + x).join(' ');
 
 /**
     Upload image to Twitter
