@@ -12,10 +12,10 @@ const USER_AGENT = "AggregateDecoding/0.0 (https://github.com/mattbierner/aggreg
 const UPLOADED_IMAGE_SIZE = 500;
 
 // Rough file extension based filter.
-const ACCEPTED_TYPES = ['jpeg', 'png', 'jpg', 'gif'];
+const ACCEPTED_TYPES = ['.jpeg', '.png', '.jpg', '.gif'];
 
 const isSupportedFileType = url =>
-    url && ACCEPTED_TYPES.indexOf(path.extname(url).toLowerCase())
+    url && ACCEPTED_TYPES.indexOf(path.extname(url).toLowerCase()) >= 0;
 
 /**
     Grab the url to a thumbnail of a commons image.
